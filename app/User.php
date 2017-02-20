@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Task;
+use App\Comments;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -31,5 +32,9 @@ class User extends Authenticatable
     public function tasks()
     {
         return $this->hasMany(Task::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
     }
 }

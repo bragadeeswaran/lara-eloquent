@@ -5,6 +5,8 @@ namespace App;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
+
+//Ref:https://laravel.com/docs/5.4/eloquent-relationships
 class Task extends Model
 {
     /**

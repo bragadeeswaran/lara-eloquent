@@ -11,11 +11,11 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label class="col-md-3 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-
+                            <div class="md-form col-md-offset-1 col-md-6">
+                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
+                                <label for="email" class="">Enter Your Email</label>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -25,11 +25,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Password</label>
+                            <label class="col-md-3 control-label">Password</label>
 
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
-
+                            <div class="md-form col-md-offset-1 col-md-6">
+                                <input type="password" class="form-control" name="password" id="password">
+                                <label for="password" class="">Enter Your Password</label>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -41,9 +41,14 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
-                                    <label>
+                                <fieldset class="form-group">
+                                    <input type="checkbox" id="checkbox1" name="remember">
+                                    <label for="checkbox1">Remember Me</label>
+                                </fieldset>
+
+                                    {{--<label>
                                         <input type="checkbox" name="remember"> Remember Me
-                                    </label>
+                                    </label>--}}
                                 </div>
                             </div>
                         </div>

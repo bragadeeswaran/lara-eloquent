@@ -31,7 +31,22 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/tasks', 'TaskController@index');
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
+//For Contact Us page
+    Route::get('contact-us', 'ContactUSController@contactUS');
+    Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactUSPost']);
 
+    //To send mail
+
+    Route::get('sendhtmlemail','MailController@html_email');
+
+//Comments page
+    Route::get('/comments', 'CommentsController@index');
+    Route::post('/comment', 'CommentsController@store');
+    Route::delete('/comment/{comments}', 'CommentsController@destroy');
     Route::auth();
 
 });
+
+
+
+/*Route::post('/task', 'TaskController@store');*/
